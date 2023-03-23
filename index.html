@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+
+<body>
+    <div class="main-container bg-black h-[100vh] overflow-y-hidden text-white ">
+        <!-- top-area -->
+        <div class="top-area h-[40vh] relative">
+            <div class="absolute bottom-6 right-4 space-y-4 flex flex-col items-end">
+                <!-- results -->
+                <div>
+                    <input id="result" class="bg-black w-[90vw]  px-2 py-2 text-right text-xl  overflow-auto" type="text" disabled>
+                </div>
+                <!-- input element comes here -->
+                <div>
+                    <input class="bg-black w-[90vw] px-2 py-2 text-right text-2xl  overflow-auto font-semibold" type="text" name="display"
+                        id="display" disabled>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+
+        <!-- number-container -->
+        <div class="number-container h-[60vh] bg-[#2a2d37]  rounded-t-3xl">
+            <!-- parent container of numeric system -->
+            <div class="flex justify-center items-center gap-10 relative top-14">
+                <!-- coloumn-1 -->
+                <div class="flex flex-col justify-center items-center space-y-6">
+                    <!-- all clear button -->
+                    <button onclick="display.value = ''"
+                        class="font-semibold text-xl text-[#27c2a6] bg-[#25272c] border-format cursor-pointer py-1 px-2 ">
+                        AC</button>
+                    <!-- seven -->
+                    <button onclick="display.value +=  '7' "
+                        class=" font-semibold text-xl py-1.5 px-3.5 bg-[#25272c] border-format cursor-pointer">7</button>
+                    <!-- four -->
+                    <button onclick="display.value +=  '4' "
+                        class="font-semibold text-xl py-1.5 px-3.5 bg-[#25272c] border-format cursor-pointer">4</button>
+                    <!-- one -->
+                    <button onclick="display.value +=  '1' "
+                        class="font-semibold text-xl py-1.5 px-3.5 bg-[#25272c] border-format cursor-pointer">1</button>
+                    <!-- reset button -->
+                    <button id="reset-btn" class="font-semibold text-xl py-1.5 px-3.5 bg-[#25272c] border-format cursor-pointer"><i
+                            class="fa-sharp fa-solid fa-rotate-right fa-rotate-270"></i></button>
+                </div>
+                <!-- coloumn-2 -->
+                <div class="flex flex-col justify-center items-center space-y-6">
+                    <!-- delete button -->
+                    <button id="delete-btn"
+                        class="font-semibold text-xl  py-1.5 px-3 bg-[#25272c] text-[#27c2a6] border-format cursor-pointer">
+                        <i class="fa-sharp fa-solid fa-delete-left"></i>
+                    </button>
+                    <!-- eight -->
+                    <button onclick="display.value +=  '8' "
+                        class="font-semibold text-xl py-1.5 px-3.5 bg-[#25272c] border-format cursor-pointer">8</button>
+                    <!-- five -->
+                    <button onclick="display.value +=  '5' "
+                        class="font-semibold text-xl py-1.5 px-3.5 bg-[#25272c] border-format cursor-pointer">5</button>
+                    <!-- two -->
+                    <button onclick="display.value +=  '2' "
+                        class="font-semibold text-xl py-1.5 px-3.5 bg-[#25272c] border-format cursor-pointer">2</button>
+                    <!-- zero -->
+                    <button onclick="display.value +=  '0' "
+                        class="font-semibold text-xl py-1.5 px-3.5 bg-[#25272c] border-format cursor-pointer">0</button>
+                </div>
+                <!-- coloumn-3 -->
+                <div class="flex flex-col justify-center items-center space-y-6">
+                    <!-- percent -->
+                    <button id="percent"
+                        class="font-semibold text-xl py-1.5 px-3.5 bg-[#25272c] text-[#27c2a6] border-format cursor-pointer">
+                        <i class="fa-light fa-percent"></i>
+                    </button>
+                    <!-- nine -->
+                    <button onclick="display.value +=  '9' "
+                        class="font-semibold text-xl py-1.5 px-3.5 bg-[#25272c] border-format cursor-pointer">9</button>
+                    <!-- six -->
+                    <button onclick="display.value +=  '6' "
+                        class="font-semibold text-xl py-1.5 px-3.5 bg-[#25272c] border-format cursor-pointer">6</button>
+                    <!-- three -->
+                    <button onclick="display.value +=  '3' "
+                        class="font-semibold text-xl py-1.5 px-3.5 bg-[#25272c] border-format cursor-pointer">3</button>
+                    <!-- point -->
+                    <button onclick="display.value +=  '.' "
+                        class="font-semibold text-xl py-1.5 px-3.5 bg-[#25272c] border-format cursor-pointer">.</button>
+                </div>
+                <!-- coloumn-4 -->
+                <div class="flex flex-col justify-center items-center space-y-6">
+                    <!-- divide -->
+                    <button onclick="display.value += '/'"
+                        class="font-semibold text-xl py-1.5 px-3.5 bg-[#25272c] border-format cursor-pointer text-[#ef7977]">
+                        <i class="fa-sharp fa-solid fa-divide"></i>
+                    </button>
+                    <!-- multiply -->
+                    <button onclick="display.value += '*'"
+                        class="font-semibold text-xl py-1.5 px-3.5 bg-[#25272c] border-format cursor-pointer text-[#ef7977]">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <!-- minus -->
+                    <button onclick="display.value +=  '-' "
+                        class="font-semibold text-xl py-1.5 px-3.5 bg-[#25272c] border-format cursor-pointer text-[#ef7977]">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <!-- plus -->
+                    <button onclick="display.value +=  '+' "
+                        class="font-semibold text-xl py-1.5 px-3.5 bg-[#25272c] border-format cursor-pointer text-[#ef7977]">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <!-- equal to -->
+                    <button id="equate"
+                        class="font-semibold text-xl py-1.5 px-3.5 bg-[#25272c] border-format cursor-pointer text-[#ef7977]">
+                        <i class="fa-regular fa-equals"></i>
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
